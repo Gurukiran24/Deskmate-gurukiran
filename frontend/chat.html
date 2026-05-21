@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Helpdesk Chat</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        #chat { border: 1px solid #ccc; height: 400px; overflow-y: auto; padding: 10px; margin: 10px 0; }
+        .user-msg { color: blue; margin: 5px 0; }
+        .bot-msg { color: green; margin: 5px 0; }
+        .trace { font-size: 0.8em; color: #666; margin-left: 10px; }
+        input, button { padding: 10px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>IT Helpdesk Chat</h1>
+    <input type="text" id="userName" placeholder="Your name" />
+    <div id="chat"></div>
+    <input type="text" id="message" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        async function sendMessage() {
+            const message = document.getElementById('message').value;
+            const userName = document.getElementById('userName').value;
+            if (!message.trim()) return;
+
+            const chatDiv = document.getElementById('chat');
+            chatDiv.innerHTML += '<div class="user-msg"><strong>You:</strong> ' + message + '</div>';
+            
+            try {
+                const response = await fetch('http://127.0.0.1:8000/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message, user_name: userName })
+                });
+                const data = await response.json();
+                chatDiv.innerHTML += '<div class="bot-msg"><strong>Bot:</strong> ' + data.response + '</div>';
+                if (data.tool_used) {
+                    chatDiv.innerHTML += '<div class="trace">Tool: ' + data.tool_used + '</div>';
+                }
+                chatDiv.innerHTML += '<div class="trace"><details><summary>Trace</summary><ul>' + 
+                    data.execution_trace.map(t => '<li>' + t + '</li>').join('') + '</ul></details></div>';
+            } catch (err) {
+                chatDiv.innerHTML += '<div class="bot-msg">Error: ' + err.message + '</div>';
+            }
+            document.getElementById('message').value = '';
+            chatDiv.scrollTop = chatDiv.scrollHeight;
+        }
+        
+        document.getElementById('message').addEventListener('keypress', e => { if (e.key === 'Enter') sendMessage(); });
+    </script>
+</body>
+</html>

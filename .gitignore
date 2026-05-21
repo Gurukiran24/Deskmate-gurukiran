@@ -1,0 +1,11 @@
+# Virtual environment
+venv/
+__pycache__/
+*.pyc
+
+# Training outputs
+results/
+
+# OS / editor files
+.DS_Store
+.vscode/

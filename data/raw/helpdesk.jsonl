@@ -1,0 +1,10 @@
+{"instruction": "User cannot connect to Wi-Fi", "response": "Ask the user to check if airplane mode is turned off, restart the router, and reconnect to the network."}
+{"instruction": "User forgot their system password", "response": "Verify the user's identity and guide them through the password reset process using the official reset tool."}
+{"instruction": "Outlook is not syncing emails", "response": "Check internet connectivity, verify account settings, and restart the Outlook application."}
+{"instruction": "VPN is not connecting", "response": "Ensure the user has an active internet connection, correct credentials, and ask them to restart the VPN client."}
+{"instruction": "Printer is not responding", "response": "Check printer power, cable or network connection, and reinstall the printer driver if necessary."}
+{"instruction": "Software installation failed", "response": "Ask for the error message, check system permissions, and verify that system requirements are met."}
+{"instruction": "System is running very slow", "response": "Check for high CPU or memory usage, close unnecessary applications, and recommend a system restart."}
+{"instruction": "User cannot access a shared drive", "response": "Verify network connectivity and ensure the user has the correct access permissions."}
+{"instruction": "Email attachments are not opening", "response": "Ask the user to save the attachment locally and ensure the required application is installed."}
+{"instruction": "Application crashes on startup", "response": "Suggest restarting the system, reinstalling the application, and checking for software updates."}

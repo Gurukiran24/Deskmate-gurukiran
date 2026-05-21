@@ -1,0 +1,104 @@
+{
+  "users": [
+    {
+      "name": "John",
+      "email": "john@company.com",
+      "software_access": [
+        "Slack",
+        "Teams",
+        "Chrome"
+      ],
+      "vpn_enabled": false
+    },
+    {
+      "name": "Alice",
+      "email": "alice@company.com",
+      "software_access": [
+        "Slack",
+        "Jira",
+        "VSCode"
+      ],
+      "vpn_enabled": true
+    },
+    {
+      "name": "Bob",
+      "email": "bob@company.com",
+      "software_access": [
+        "Email",
+        "Teams"
+      ],
+      "vpn_enabled": false
+    }
+  ],
+  "tickets": [
+    {
+      "ticket_id": "T1001",
+      "user": "John",
+      "issue": "VPN connection failing",
+      "status": "Open"
+    },
+    {
+      "ticket_id": "T1002",
+      "user": "Alice",
+      "issue": "Password reset needed",
+      "status": "Resolved"
+    },
+    {
+      "ticket_id": "T1003",
+      "user": "John",
+      "issue": "Test ticket",
+      "status": "Open"
+    },
+    {
+      "ticket_id": "T1004",
+      "user": "Bob",
+      "issue": "email not working",
+      "status": "Open"
+    },
+    {
+      "ticket_id": "T1005",
+      "user": "John",
+      "issue": "VPN not connecting",
+      "status": "Open"
+    },
+    {
+      "ticket_id": "T1006",
+      "user": "Alice",
+      "issue": "email issue",
+      "status": "Open"
+    },
+    {
+      "ticket_id": "T1007",
+      "user": "Alice",
+      "issue": "email issue",
+      "status": "Open"
+    },
+    {
+      "ticket_id": "T1008",
+      "user": "Alice",
+      "issue": "email issue",
+      "status": "Open"
+    }
+  ],
+  "software_access": {
+    "Slack": [
+      "John",
+      "Alice"
+    ],
+    "Teams": [
+      "John",
+      "Bob"
+    ],
+    "Jira": [
+      "Alice"
+    ],
+    "VSCode": [
+      "Alice"
+    ]
+  },
+  "vpn_status": {
+    "Alice": "Connected",
+    "John": "Disconnected",
+    "Bob": "Disconnected"
+  }
+}
