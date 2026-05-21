@@ -70,6 +70,14 @@ FastAPI REST Service
 
 Trained model artifacts are intentionally excluded from version control due to GitHub file size limits and standard machine learning repository practices. The model is generated locally by running the training script, and the repository focuses on providing a reproducible training, inference, and deployment pipeline.
 
+### Model download
+
+- **Model hosting:** Large model artifacts are not stored in this repository. You can download the trained model from the project's release or external storage (link below).
+
+- **Download (placeholder):** https://example.com/your-model-download-link
+
+- **To add the model to this repo in the future:** use Git LFS (`git lfs track "model/*.bin"`) or host the file in a release/ cloud storage and link here.
+
 ### Model Choice Rationale
 
 `distilgpt2` was selected due to hardware constraints. The training pipeline is **model-agnostic** and can be scaled to larger instruction-tuned models (such as LLaMA or Mistral) using LoRA or QLoRA on GPU-backed systems.
